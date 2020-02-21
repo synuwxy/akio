@@ -2,6 +2,9 @@ package com.synuwxy.akio.sample.model;
 
 import lombok.Data;
 
+/**
+ * @author wxy
+ */
 @Data
 public class GoodsModel {
 

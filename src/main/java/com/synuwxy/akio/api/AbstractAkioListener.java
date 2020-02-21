@@ -9,10 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationListener;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
-
-import java.util.UUID;
 
 /**
  * @author wxy
@@ -28,10 +25,22 @@ public abstract class AbstractAkioListener<T extends AkioHandleEvent> implements
         this.applicationContext = applicationContext;
     }
 
+    /**
+     * 监听到相应事件之后调用的接口
+     * @param event 事件
+     */
     public abstract void handle(T event);
 
+    /**
+     * 事件执行期间出现意外会自动调用该接口，用于保持数据一致性
+     * @param event 事件
+     */
     public abstract void offset(T event);
 
+    /**
+     * 事件执行完成之后调用的接口
+     * @param event 事件
+     */
     public abstract void complete(T event);
 
     @Override
@@ -50,7 +59,7 @@ public abstract class AbstractAkioListener<T extends AkioHandleEvent> implements
         } catch (Exception e) {
             log.error(e.getMessage());
             log.info("触发回滚 traceId: {}", traceId);
-            applicationContext.publishEvent(new AkioOffsetEvent(this, traceId));
+            applicationContext.publishEvent(new AkioOffsetEvent(this));
         }
         complete(event);
     }

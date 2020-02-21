@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 
+/**
+ * @author wxy
+ */
 @Service
 @Slf4j
 public class ReduceStockService extends AbstractAkioListener<CheckStockCompleteEvent> {

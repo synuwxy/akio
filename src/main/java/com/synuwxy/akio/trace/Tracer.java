@@ -1,5 +1,8 @@
 package com.synuwxy.akio.trace;
 
+/**
+ * @author wxy
+ */
 public class Tracer {
 
     private static final ThreadLocal<String> TRACELOCAL = new ThreadLocal<>();

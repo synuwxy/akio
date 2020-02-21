@@ -5,6 +5,9 @@ import com.synuwxy.akio.record.AkioRecorder;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
+/**
+ * @author wxy
+ */
 @Component
 public class AkioOffestListener implements ApplicationListener<AkioOffsetEvent> {
 

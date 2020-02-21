@@ -1,6 +1,5 @@
 package com.synuwxy.akio.record;
 
-import com.alibaba.fastjson.JSONObject;
 import com.synuwxy.akio.api.OffsetRecorder;
 import com.synuwxy.akio.trace.Tracer;
 import lombok.extern.slf4j.Slf4j;

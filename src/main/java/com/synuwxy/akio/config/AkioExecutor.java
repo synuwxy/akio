@@ -4,6 +4,9 @@ import com.synuwxy.akio.trace.Tracer;
 
 import java.util.concurrent.Executor;
 
+/**
+ * @author wxy
+ */
 public class AkioExecutor implements Executor {
 
     private Executor executor;

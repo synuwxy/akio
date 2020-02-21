@@ -10,7 +10,7 @@ public class PayCompleteEvent extends AkioHandleEvent {
 
     private UserModel userModel;
 
-    public PayCompleteEvent(Object source, UserModel userModel) {
+    PayCompleteEvent(Object source, UserModel userModel) {
         super(source);
         this.userModel = userModel;
     }

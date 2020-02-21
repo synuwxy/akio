@@ -7,14 +7,8 @@ import org.springframework.context.ApplicationEvent;
  */
 public class AkioOffsetEvent extends ApplicationEvent {
 
-    private String traceId;
-
-    public AkioOffsetEvent(Object source, String traceId) {
+    public AkioOffsetEvent(Object source) {
         super(source);
-        this.traceId = traceId;
     }
 
-    public String getTraceId() {
-        return traceId;
-    }
 }
