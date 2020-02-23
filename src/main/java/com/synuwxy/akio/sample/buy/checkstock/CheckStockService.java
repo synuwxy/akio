@@ -1,7 +1,7 @@
 package com.synuwxy.akio.sample.buy.checkstock;
 
-import com.synuwxy.akio.sample.model.GoodsModel;
-import com.synuwxy.akio.sample.model.StoreModel;
+import com.synuwxy.akio.sample.buy.model.GoodsModel;
+import com.synuwxy.akio.sample.buy.model.StoreModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;

@@ -1,7 +1,7 @@
 package com.synuwxy.akio.sample.buy.pay;
 
 import com.synuwxy.akio.event.AkioHandleEvent;
-import com.synuwxy.akio.sample.model.UserModel;
+import com.synuwxy.akio.sample.buy.model.UserModel;
 
 /**
  * @author wxy

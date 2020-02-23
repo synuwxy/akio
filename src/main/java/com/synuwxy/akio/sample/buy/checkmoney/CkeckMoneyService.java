@@ -1,7 +1,7 @@
 package com.synuwxy.akio.sample.buy.checkmoney;
 
-import com.synuwxy.akio.sample.model.GoodsModel;
-import com.synuwxy.akio.sample.model.UserModel;
+import com.synuwxy.akio.sample.buy.model.GoodsModel;
+import com.synuwxy.akio.sample.buy.model.UserModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;

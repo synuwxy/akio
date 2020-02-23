@@ -2,7 +2,7 @@ package com.synuwxy.akio.sample.buy.reducestock;
 
 import com.synuwxy.akio.api.AbstractAkioListener;
 import com.synuwxy.akio.sample.buy.checkstock.CheckStockCompleteEvent;
-import com.synuwxy.akio.sample.model.StoreModel;
+import com.synuwxy.akio.sample.buy.model.StoreModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -38,11 +38,13 @@ public class ReduceStockService extends AbstractAkioListener<CheckStockCompleteE
     public void offset(CheckStockCompleteEvent event) {
         log.info("库存回滚");
         StoreModel storeModel = event.getStoreModel();
-        int number = event.getNumber();
-        int stock = storeModel.getStock();
 
-        storeModel.setStock(number + stock);
-        log.info("回滚成功，[商店: {}] 剩余库存: {}", storeModel.getName(), number + stock);
+//        TODO 尝试使用clone的方法避免对象引用造成的数据不一致
+//        int number = event.getNumber();
+//        int stock = storeModel.getStock();
+//
+//        storeModel.setStock(number + stock);
+        log.info("回滚成功，[商店: {}] 剩余库存: {}", storeModel.getName(), storeModel.getStock());
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.synuwxy.akio.api;
 
+import com.synuwxy.akio.common.utils.ObjectUtil;
 import com.synuwxy.akio.event.AkioHandleEvent;
 import com.synuwxy.akio.event.AkioOffsetEvent;
 import com.synuwxy.akio.record.AkioRecorder;
@@ -52,15 +53,15 @@ public abstract class AbstractAkioListener<T extends AkioHandleEvent> implements
             Tracer.setTraceId(traceId);
         }
 
-        AkioRecorder.register(traceId, new OffsetRecorder<>(this, event));
+        AkioRecorder.register(traceId, new OffsetRecorder<>(this, ObjectUtil.clone(event)));
 
         try {
-            handle(event);
+            handle(ObjectUtil.clone(event));
         } catch (Exception e) {
             log.error(e.getMessage());
             log.info("触发回滚 traceId: {}", traceId);
             applicationContext.publishEvent(new AkioOffsetEvent(this));
         }
-        complete(event);
+        complete(ObjectUtil.clone(event));
     }
 }

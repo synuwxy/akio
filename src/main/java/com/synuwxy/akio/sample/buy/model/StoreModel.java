@@ -1,12 +1,14 @@
-package com.synuwxy.akio.sample.model;
+package com.synuwxy.akio.sample.buy.model;
 
 import lombok.Data;
+
+import java.io.Serializable;
 
 /**
  * @author wxy
  */
 @Data
-public class UserModel {
+public class StoreModel implements Serializable {
 
     private String id;
 
@@ -14,12 +16,9 @@ public class UserModel {
 
     private int stock;
 
-    private float money;
-
-    public UserModel(String id, String name, int stock, float money) {
+    public StoreModel(String id, String name, int stock) {
         this.id = id;
         this.name = name;
         this.stock = stock;
-        this.money = money;
     }
 }

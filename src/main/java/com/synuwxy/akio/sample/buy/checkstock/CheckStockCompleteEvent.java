@@ -1,8 +1,8 @@
 package com.synuwxy.akio.sample.buy.checkstock;
 
 import com.synuwxy.akio.event.AkioHandleEvent;
-import com.synuwxy.akio.sample.model.GoodsModel;
-import com.synuwxy.akio.sample.model.StoreModel;
+import com.synuwxy.akio.sample.buy.model.GoodsModel;
+import com.synuwxy.akio.sample.buy.model.StoreModel;
 
 /**
  * @author wxy

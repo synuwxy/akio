@@ -1,12 +1,14 @@
-package com.synuwxy.akio.sample.model;
+package com.synuwxy.akio.sample.buy.model;
 
 import lombok.Data;
+
+import java.io.Serializable;
 
 /**
  * @author wxy
  */
 @Data
-public class GoodsModel {
+public class GoodsModel implements Serializable {
 
     private String id;
 
